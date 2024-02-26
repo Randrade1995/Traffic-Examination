@@ -28,25 +28,48 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+![image](https://github.com/Randrade1995/Traffic-Examination/assets/161271930/4dda857e-b7ed-45f3-979b-517142a06739)
+
+
+
+  
+While using Microsoft Azure, is it very important to create two Virtual Machines (VM) seperate lately so that the IP address are not the same. This can and will create a issue
+if it is the same IP address in the future and we do not want to start over.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+![image](https://github.com/Randrade1995/Traffic-Examination/assets/161271930/6207cb93-1d22-402d-a895-123dd990a023)
+
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Remote desktop log into VM1 using the physical IP address and the same password upon creation of the virtual machine. once logged in, downloan Wireshark with all the basic settings and have Windows Powershell application loaded up and ready. 
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+
+![image](https://github.com/Randrade1995/Traffic-Examination/assets/161271930/a8b3ab73-3515-4c2e-b356-0e118ec624bf)
+
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+After loading up Wireshark, the first thing you should do it filter the search bar using "ICMP" this will show all traffic using "ICMP" should be nothing at the moment. 
 </p>
 <br />
+
+
+
+![image](https://github.com/Randrade1995/Traffic-Examination/assets/161271930/c6f50a99-d19f-4098-a861-d5c4f1bd7cd9)
+
+
+
+
+Create a Network Security Group from Microsoft Azure. select the correct research group that you are working on, then click on inbound security rules. create a rule for ICMP and deny all action under 200 priority.
+
+
+
